@@ -1,0 +1,20 @@
+version: "0.1.0"
+pre_ci_boot:
+    image: maven
+    tag: 3.5.2-jdk-8-alpine
+ci:
+    # - apk add --update --no-cache python python-dev git
+    # - mvn clean install
+    # - mvn clean install | tee $ALAUDACI_UPLOAD_DIR/maven_build.log
+    # - cp -r src $ALAUDACI_UPLOAD_DIR/src
+    # - cp -r target $ALAUDACI_UPLOAD_DIR/targetall
+    # - python incoco/incoco.py -m git -p $PWD/src -r78a71
+    # - mvn jacoco:report
+    # - cp -r target $ALAUDACI_UPLOAD_DIR/targetalpha
+    # - rm incoco/*.pyc
+    # - cp -r incoco $ALAUDACI_UPLOAD_DIR/incoco
+    - cp Dockerfile $ALAUDACI_DEST_DIR
+    - cp run.sh $ALAUDACI_DEST_DIR
+    - cp run.sh $ALAUDACI_UPLOAD_DIR
+    # - mvn sonar:sonar -Dsonar.host.url=https://sonar.adolphlwq.xyz | tee $ALAUDACI_UPLOAD_DIR/maven_sonar.log
+    # - mvn sonar:sonar -Dsonar.host.url=https://sonar.adolphlwq.xyz
